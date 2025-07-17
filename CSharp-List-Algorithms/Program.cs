@@ -1,5 +1,6 @@
 ﻿using System;
 using CSharp_List_Algorithms.Algorithms.Manipulation;
+using CSharp_List_Algorithms.Algorithms.Searching;
 
 
 namespace Travail_algo
@@ -8,9 +9,15 @@ namespace Travail_algo
     {
         static void Main(string[] args)
         {
+            List<int> list= new List<int> { 1,2,3,2,1};
             ManipulationAlgorithms algo = new ManipulationAlgorithms();
-
-            // Liste d'entiers
+            SearchingAlgorithms algoSerach= new SearchingAlgorithms();
+            var doublons=algoSerach.TrouverDoublons(list);
+            foreach (int i in doublons) 
+            {
+                Console.WriteLine(i);
+            }
+            /* Liste d'entiers
             List<int> intList = new List<int> { 1, 2, 3, 4 };
             intList = algo.Reverse(intList);
             Console.WriteLine("Reverse int: " + string.Join(", ", intList));
@@ -31,7 +38,7 @@ namespace Travail_algo
             Console.Write("Reverse object: ");
             foreach (var item in objectList)
                 Console.Write(item + " ");
-            Console.WriteLine();
+            Console.WriteLine();*/
         }
     }
 }
